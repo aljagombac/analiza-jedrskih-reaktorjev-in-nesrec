@@ -1,1 +1,1 @@
-# analiza-jedrskih-reaktorjev-in-nesrec
+# Analiza jedrskih reaktorjev in jedrskih nesreč
