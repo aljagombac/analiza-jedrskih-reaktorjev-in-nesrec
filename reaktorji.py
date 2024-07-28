@@ -118,13 +118,13 @@ def uredi_tabele(tabele, drzave, sez_imen):
         sez_df.append(df)
     return sez_df
 
-def zapisi_v_csv(sez_df, dat_csv, mapa):
+def zdruzi_in_zapisi_v_csv(sez_df, dat_csv, mapa):
     pot = os.path.join(mapa,dat_csv)
     df_vse_tabele = pd.concat(sez_df)
+    if 'Unnamed: 9' in df_vse_tabele.columns.tolist():
+        df_vse_tabele.drop('Unnamed: 9', axis=1, inplace=True)
 
     df_vse_tabele.to_csv(pot, mode="w", index=False)
-
-
 
 #def podatki_v_csv(vsebina_strani, dat_csv, mapa):
 #    """Poišče tabele s podatki o reaktorjih in jih napiše v csv datoteko."""
@@ -168,13 +168,13 @@ def main():
     sez_df2 = uredi_tabele(tabele2, drzave2, sez_imen2)
     print("Uspešno uredil tabele.")
 
-    zapisi_v_csv(sez_df1, reaktorji_csv, reaktorji_mapa)
-    zapisi_v_csv(sez_df2, nesrece_csv, reaktorji_mapa)
+    zdruzi_in_zapisi_v_csv(sez_df1, reaktorji_csv, reaktorji_mapa)
+    zdruzi_in_zapisi_v_csv(sez_df2, nesrece_csv, reaktorji_mapa)
 
     print("Konec!")
 
-if __name__ == "__main__":
-    main()
+#if __name__ == "__main__":
+#    main()
 
 
 
