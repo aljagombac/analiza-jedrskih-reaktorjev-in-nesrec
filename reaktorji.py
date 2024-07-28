@@ -83,19 +83,47 @@ def poisci_drzave(vsebina_strani, soup):
             sez_drzav.append(header.get_text())    
     return sez_drzav
 
-def zapisi_tabele_v_csv(tabele, drzave, dat_csv, mapa):
-    """Podatke o jedrskih reaktorjih iz tabel zapiše v csv datoteko in vsaki tabeli doda ime države, kateri pripadajo reaktorji."""
-    pot = os.path.join(mapa,dat_csv)
+def preimenovanje_stolpcev(tabela, sez_novih_imen):
+    df = pd.read_html(StringIO(str(tabela)))        
+    df = pd.concat(df)
+    sez_imen_stolpcev = df.columns.tolist() 
 
-    tabela_drzava = zip(tabele, drzave)    
+    preimenovati = {}
+    for i, stolpec in enumerate(sez_imen_stolpcev):
+        if stolpec == "Unnamed: 9":
+            continue
+        preimenovati[stolpec] = sez_novih_imen[i]
+
+    df.rename(columns=(preimenovati), inplace=True)   
+    return df
+
+def dodaj_stolpec(df, drzava):
+    stevilo_vrstic = len(df)
+    stolpec = (stevilo_vrstic)*[drzava]
+
+    if "Lokacija" in df.columns.tolist():
+        return df
+    else:
+        df.insert(1, column="Lokacija", value=stolpec)
+        return df
+
+def uredi_tabele(tabele, drzave, sez_imen):
+    """Podatke o jedrskih reaktorjih iz tabel zapiše v csv datoteko in vsaki tabeli doda ime države, kateri pripadajo reaktorji."""
+    tabela_drzava = zip(tabele, drzave) 
+
+    sez_df = []   
     for i, (tabela, drzava) in enumerate(tabela_drzava):
-        df = pd.read_html(StringIO(str(tabela)))        
-        df = pd.concat(df)
-        df.rename(columns=({"Plant name": "Plant name" + " - " + drzava, "Location" : "Location" + " - " + drzava}), inplace=True)   
-        if i == 0:     
-            df.to_csv(pot, mode="w", index=False)
-        else:
-            df.to_csv(pot, mode="a", index=False)   
+        df = preimenovanje_stolpcev(tabela, sez_imen)
+        df = dodaj_stolpec(df, drzava)
+        sez_df.append(df)
+    return sez_df
+
+def zapisi_v_csv(sez_df, dat_csv, mapa):
+    pot = os.path.join(mapa,dat_csv)
+    df_vse_tabele = pd.concat(sez_df)
+
+    df_vse_tabele.to_csv(pot, mode="w", index=False)
+
 
 
 #def podatki_v_csv(vsebina_strani, dat_csv, mapa):
@@ -133,14 +161,22 @@ def main():
     drzave2 = poisci_drzave(vsebina2, soup2)
     print("Uspešno poiskal imena držav.")
 
-    zapisi_tabele_v_csv(tabele1, drzave1, reaktorji_csv, reaktorji_mapa)
-    zapisi_tabele_v_csv(tabele2, drzave2, nesrece_csv, reaktorji_mapa)
-    print("Uspešno shranil csv-ja.")
+    sez_imen1 = ["Ime elektrarne", "Številka reaktorja", "Tip", "Model", "Status", "Moč (MW)", "Začetek gradnje", "Začetek delovanja", "Datum zaprtja"]
+    sez_imen2 = ["Datum", "Lokacija", "Opis", "Smrti", "Strošek", "INES ocena"]
+
+    sez_df1 = uredi_tabele(tabele1, drzave1, sez_imen1)
+    sez_df2 = uredi_tabele(tabele2, drzave2, sez_imen2)
+    print("Uspešno uredil tabele.")
+
+    zapisi_v_csv(sez_df1, reaktorji_csv, reaktorji_mapa)
+    zapisi_v_csv(sez_df2, nesrece_csv, reaktorji_mapa)
 
     print("Konec!")
 
 if __name__ == "__main__":
     main()
+
+
 
 
 

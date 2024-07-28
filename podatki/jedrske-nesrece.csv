@@ -1,10 +1,9 @@
-Date,Location - Belgium,Description,Fatalities,Cost (in millions 2006 US$),INES rating
+Datum,Lokacija,Opis,Smrti,Strošek,INES ocena
 2002,"Tihange, Belgium","""Safety injection during hot shutdown at Tihange 2 unit"".[12][13]",0,,2
 2005,"Tihange, Belgium","""Inadequate protection relays and related setpoints"".[14][11]",0,,2
 2006,"Fleurus, Belgium","""Severe health effects for a worker at a commercial irradiation facility as a result of high doses of radiation"" at Sterigenics.[15]",0,,4
 2008,"Fleurus, Belgium",Iodine-131 release in the environment.[16],0,,3
 2011,"Doel, Belgium","""Inadequate setting of the auxiliary feedwater turbopump"".[17]",0,,2
-Date,Location - Canada,Description,Fatalities,Cost (in millions 2006 US$),INES rating
 "December 12, 1952","CRL, Ontario, Canada",The NRX accident. A hydrogen explosion occurred in the reactor core due to a cascade of malfunctions and operator errors. The world's first major nuclear reactor accident.[20],0,See NRX accident,5[21][22]
 "May 24, 1958","CRL, Ontario, Canada","The NRU accident. A fuel rod caught fire and broke when removed, then dispersed fission products and alpha-emitting particles in the reactor building.",0,See NRU accident.,
 November 1978,"WR-1 Reactor at Pinawa, Manitoba, Canada","LOCA loss of coolant accident. 2,739 litres of coolant oil leaked, most of it into the Winnipeg River. The repair took several weeks for workers to complete.[23]",0,Unknown,
@@ -15,7 +14,6 @@ March 1986,"Bruce nuclear Reactor 2, Bruce County, Ontario, Canada",LOCA Loss of
 "June 11, 2002","Bruce nuclear Reactor 6, Bruce B station. Bruce County, Ontario, Canada","Pressure tube and calandria tube damage during a channel maintenance procedure, required replacement of the two tubes.[26]",0,Unknown,0[29]
 "December 21, 2009","Darlington nuclear station. Clarington, Ontario, Canada","Around 200,000 litres of water with trace amounts of radioactive isotope tritium coming from a storage tank mistakenly were released by workers into Lake Ontario, representing 0.1% of the monthly allowed amounts of tritium for this power plant.[30][31]",0,Unknown.,
 "March 14, 2011","Pickering nuclear Plant A Pickering, Ontario, Canada","A leak of 73 cubic metres (73,000 litres) of demineralized water into Lake Ontario from a failed pump seal. There was negligible risk to the public according to the Canadian Nuclear Safety Commission.[32][33]",0,Unknown.,
-Date,Location - France,Description,Fatalities,Cost (in millions 2006 US$),INES rating
 17 Oct 1969,"Loir-et-Cher, France","50 kg of uranium dioxide melted inside of the A1 nuclear reactor of Saint-Laurent-des-Eaux, during a refueling operation",0,Unknown (likely far less than the 13 Mar 1980 accident),4.0
 25 Jul 1979,"Saclay, France","Radioactive fluids escaped into drains designed for ordinary wastes, seeping into the local watershed at the Saclay BL3 Reactor",0,5,
 13 Mar 1980,"Loir-et-Cher, France","A malfunctioning cooling system fused fuel elements together at the Saint Laurent A2 reactor, melting two fuel assemblies and forcing an extended shutdown",0,22,4.0
@@ -28,18 +26,15 @@ Date,Location - France,Description,Fatalities,Cost (in millions 2006 US$),INES r
 9 Aug 2009,"Gravelines, France","Assembly system failed to properly eject spent fuel rods from the Gravelines Nuclear Power Plant, causing the fuel rods to jam and the defueling operation to be suspended",0,2,1.0
 5 Apr 2012,"Penly, France","Fire on a primary pump of the second reactor, followed by a small radioactive leak into the containment",0,?,1.0
 2017,"France, generic",20 reactors of the 1300 MW-class with seismic weaknesses on their emergency diesel generators,0,?,2.0
-Date,Location - Germany,Description,Fatalities,Cost (in millions 2006 US$ million),INES
 1975,"Greifswald, East Germany",A near core meltdown at Greifswald Nuclear Power Plant: Three out of six cooling water pumps were switched off for a failed test. A fourth pump broke down by loss of electric power and control of the reactor was lost. 10 fuel elements were slightly damaged before recovery,0,?,3
 4 May 1986,"Hamm-Uentrop, Germany",Operator actions to dislodge damaged fuel elements at the Thorium high-temperature reactor released radioactivity to 4 km2 surrounding the facility,0,267,?
 17 Dec 1987,"Hessen, Germany",Stop valve failed for a moment at Biblis Nuclear Power Plant; contamination of local area in the reactor building,0,13,
-Date,Location - India,Description,Fatalities,Cost (in millions 2006 US$)
-4 May 1987,"Kalpakkam, India","Fast Breeder Test Reactor at Kalpakkam refuelling accident that ruptures the reactor core, resulting in a two-year shutdown",0,300
-10 Sep 1989,"Tarapur, Maharashtra, India",Operators at the Tarapur Atomic Power Station find that the reactor had been leaking radioactive iodine at more than 700 times normal levels. Repairs to the reactor take more than a year,0,78
-13 May 1992,"Tarapur, Maharashtra, India",A malfunctioning tube causes the Tarapur Atomic Power Station to release 12 curies of radioactivity,0,2
-31 Mar 1993,"Bulandshahr, Uttar Pradesh, India","The Narora Atomic Power Station suffers a fire at two of its steam turbine blades, damaging the heavy water reactor and almost leading to a meltdown",0,220
-2 Feb 1995,"Kota, Rajasthan, India","The Rajasthan Atomic Power Station leaks radioactive helium and heavy water into the Rana Pratap Sagar River, necessitating a two-year shutdown for repairs",0,280
-22 Oct 2002,"Kalpakkam, India","Almost 100 kg radioactive sodium at the fast breeder reactor leaks into a purification cabin, ruining a number of valves and operating systems",0,30
-Date,Location - Japan,Description,Fatalities,Cost (in millions 2006 US$),INES rating
+4 May 1987,"Kalpakkam, India","Fast Breeder Test Reactor at Kalpakkam refuelling accident that ruptures the reactor core, resulting in a two-year shutdown",0,300,
+10 Sep 1989,"Tarapur, Maharashtra, India",Operators at the Tarapur Atomic Power Station find that the reactor had been leaking radioactive iodine at more than 700 times normal levels. Repairs to the reactor take more than a year,0,78,
+13 May 1992,"Tarapur, Maharashtra, India",A malfunctioning tube causes the Tarapur Atomic Power Station to release 12 curies of radioactivity,0,2,
+31 Mar 1993,"Bulandshahr, Uttar Pradesh, India","The Narora Atomic Power Station suffers a fire at two of its steam turbine blades, damaging the heavy water reactor and almost leading to a meltdown",0,220,
+2 Feb 1995,"Kota, Rajasthan, India","The Rajasthan Atomic Power Station leaks radioactive helium and heavy water into the Rana Pratap Sagar River, necessitating a two-year shutdown for repairs",0,280,
+22 Oct 2002,"Kalpakkam, India","Almost 100 kg radioactive sodium at the fast breeder reactor leaks into a purification cabin, ruining a number of valves and operating systems",0,30,
 8 Jan 1975,"Mihama, Japan",Radioactivity released from Mihama nuclear power plant.[40],0,,
 2 Nov 1978,"Fukushima No I, Japan","Japan's first criticality accident at No 3 reactor, this accident was hidden for 29 years and reported on 22 Mar 2007",0,,
 2 Apr 1979,"Tokaimura, Japan",Two workers suffer radioactive contamination at the Tokaimura complex.[40],0,,
@@ -60,9 +55,7 @@ December 1995,"Tsuruga, Japan",The fast breeder Monju Nuclear Power Plant sodium
 Dec 2009,"Hamaoka, Japan",Leakage accident of radioactive water. 34 workers were exposed to radiation,0,,
 Mar 2011,"Fukushima Dai-ichi, Japan","The world's second INES 7 accident. A magnitude 9.0 earthquake and associated tsunami triggered cooling problems at Fukushima 1 & 2 stations with several reactors. Loss of coolant resulted in meltdowns in three units and hydrogen explosions caused their structural damage. Radioactive steam was released into the atmosphere, and highly radioactive water spilled into the ocean through utility trenches. Some immediate injuries resulted. 117 workers received committed effective doses above 100 mSv, and 6 workers received doses above the emergency dose limit of 250 mSv.[48]",2+;[49] further near 573 died from indirect causes[50],"1,200 - 2,100",7.0
 6 June 2017,Ibaraki Prefecture,"The incident occurred at the Japan Atomic Energy Agency's Oarai Research and Development Center, after a bag containing radioactive material tore open while a check on radioactive storage inside a ""controlled"" room was performed. It resulted in internal radiation exposure in five workers, with one of them inhaling plutonium. However, no radiation was detected in the external environment.[51][52]",0,,
-Date,Location - Pakistan,Description,Fatalities,Cost (in millions 2006 US$)
-18 October 2011,"Karachi, Pakistan","The KANUPP Karachi nuclear power plant imposed a seven-hour emergency after heavy water leaked from a feeder pipe to the reactor. The leakage took place during a routine maintenance shut down, and the emergency was lifted seven hours later, after the affected area was isolated.[53]",0,
-Date,Location - Russia,Description,Fatalities,Cost (in millions 2006 US$),INES
+18 October 2011,"Karachi, Pakistan","The KANUPP Karachi nuclear power plant imposed a seven-hour emergency after heavy water leaked from a feeder pipe to the reactor. The leakage took place during a routine maintenance shut down, and the emergency was lifted seven hours later, after the affected area was isolated.[53]",0,,
 1957,"Mayak reprocessing plant, Ural-region","Kyshtym disaster: Explosion in a waste tank of the plant with a massive radioactive cloud, deteriorating deeply the health of the region's population",The accident caused nearly 200 late cancer fatalities[54],?,6.0
 1975,"Leningrad, Soviet union",Reactor 1 of the Leningrad Nuclear Power Plant suffered core damage which released radioactivity.,0,?,4.0
 1992,"Saint Petersburg, Russian Federation",An RBMK reactor of the Leningrad NPP released radioactivity which traveled over north-eastern Europe. Russian officials declared that they saw no immediate danger posed by the event.[55],0,?,2.0
@@ -70,20 +63,13 @@ Date,Location - Russia,Description,Fatalities,Cost (in millions 2006 US$),INES
 April 1998,"Saint Petersburg, Russian Federation",An RBMK reactor was shut down following the discovery of a radiation leak.[55],,,
 Autumn 2017,"Ural-region, Russian Federation",Roshydromet had issued report stated rise in beta activity of aerosoles and surfaces at all monitoring posts in South Ural from 25th Sep to 1 Oct 2017. In two aerosol samples Ru-106 activity increase was detected. At 26th and 27th Sep Ru-106 decay products was detected in Tatarstan republic. At 27th and 28th Sep high pollution levels of aerosoles and surfaces was detected in Volgograd and Rostov-on-Don. In two aerosol samples from Chelyabinsk Oblast 986- and 440-fold activity increase was measured comparing to preceding month[56] The Mayak nuclear plant is widely suspected as the source of the radiation.[57],,,
 August 2019,Arkhangelsk region,"On August 9, 2019 an explosion triggered radiation levels to rise near Nyonoksa, which was later confirmed by Russia's nuclear energy agency as an accident while testing an isotope power source for a liquid-fuelled rocket engine. Five nuclear scientists had died and three suffered from burns. Russian authorities ordered the evacuation of the village nearing the blast site, suggesting grave dangers due to nuclear radiation.[58]",5,,
-Date,Location - South Korea,Description,Fatalities,Cost (in millions 2006 US$)
-4 October 1999,"Wolsung, South Korea",22 workers employed by the Korea Electric Power Corp were exposed to radioactive liquid and gas at the Wolsung-3 reactor. Two workers were initially exposed when approximately 12 gallons of heavy water leaked during pipe maintenance. A further 20 workers were exposed during clean-up operations.[59],,
-Date,Location - Serbia,Description,Fatalities,Cost,INES
+4 October 1999,"Wolsung, South Korea",22 workers employed by the Korea Electric Power Corp were exposed to radioactive liquid and gas at the Wolsung-3 reactor. Two workers were initially exposed when approximately 12 gallons of heavy water leaked during pipe maintenance. A further 20 workers were exposed during clean-up operations.[59],,,
 October 1958,"Vinca, Serbia",6 Workers were exposed to high doses of radiation while taking out nuclear fuel rods out of the prototype nuclear reactor.,1,?,3
-Date,Location - Switzerland,Description,Fatalities,Cost,INES
 January 1969,"Lucens, Switzerland",Melting of a fuel element of the protoptype power reactor (6 Megawatts el.) VAK Lucens,0,?,4
-Date,Location - Sweden,Description,Fatalities,Cost,INES
 May 2011,"Varberg, Sweden",A left behind wet vacuum cleaner in reactor 2 of the Ringhals NPP caught fire during a test pressurization of the reactor. The reactor had to be shut down for six months for cleaning. [61],0,SEK 1.8 billion (estimated),
-Date,Location - Taiwan,Description,Fatalities,Cost,INES
 March 2001,"Maanshan, South Taiwan",2-hour-Station Blackout in one of the two units of Maanshan Nuclear Power Plant due to a grounding fault (Common cause failure) to the two available emergency diesel buses,0,?,3
-Date,Location - Ukraine,Description,Fatalities,Cost (in millions 2006 US$),INES
 26 Apr 1986,"Pripyat, Ukraine, USSR","Steam explosion and meltdown (see Chernobyl disaster) necessitating the evacuation of 300,000 people from the region and dispersing radioactive material across Europe (see Effects of the Chernobyl disaster)","Around 50 directly (radiation sickness), eventually as many as 4000 (mainly cancers)[62]",6700.0,7.0
 October 1999,"Pripyat, Ukraine","Metal structures broke, causing a gamma ray source to fall out of its container and expose two workers to ""high"" levels of radiation. The reactor was subsequently shut down until November.[55]",,,
-Date,Location - United Kingdom,Description,Victims,Cost (in millions 2006 US$),INES rating
 "Spring, 1957","Windscale (now Sellafield), UK",Radioactivity release from a military reactor contaminated about 800 farms and introduced strontium 90 to domestic milk supply. Milk was sold to the public without any warnings.[63],,,
 8 Oct 1957,"Sellafield, UK","Fire ignited plutonium piles of a military reactor, contaminating surrounding dairy farms with radioactive releases of mainly iodine and in lesser amounts cesium and strontium.[63][64]",The two accidents of 1957 caused around 240 cancers[65],78,5
 May 1967,"Scotland, United Kingdom","Melting of fuel element at Dumfries and Galloway. Graphite debris partially blocked a fuel channel causing a fuel element to melt and catch fire at the Chapelcross nuclear power station. Contamination was confined to the reactor core. The core was repaired and restarted in 1969, operating until the plant's shutdown in 2004.[66][67]",,,
@@ -92,7 +78,6 @@ Sep 1996,"Dounreay, Scotland, UK",A fuel reprocessing plant was shut down after 
 Feb 1998,"Sellafield, UK",Two workers were exposed to elevated levels of radiation when the containment properties of a bag containing a contaminated filter were compromised. The workers were moved to duties elsewhere in the plant to limit their doses.[70],,,
 9 May 2005,"Sellafield, UK","82,966 litres of radioactive liquor made up of nitric acid containing 20 metric tonnes of dissolved uranium and 160 kilograms of plutonium leaked via a fractured pipe from primary to secondary containment within the THORP nuclear fuel reprocessing plant.",0,65,3[71]
 July until November and further on 2019/2020,"Sellafield, UK",Loss of radioactive liquor into the ground from the Magnox Swarf Storage Silo (MSSS) which contains irradiated magnesium cladding materials from the UK's Magnox reactor fleet. The levels of activity contained in the lost liquor surpassed regulatory limits. Terrain remediation works will be undertaken when the facility is decommissioned. [72],0,?,2
-Date,Location - United States,Description,Fatalities,Cost (in millions 2006 US$),INES
 "November 29, 1955","Idaho Falls, Idaho, USA",Power excursion with partial core meltdown at National Reactor Testing Station's EBR-1 Experimental Breeder Reactor I,0.0,5,
 "July 26, 1959","Simi Valley, California, USA",Partial core meltdown at Santa Susana Field Laboratory’s Sodium Reactor Experiment,0.0,32,
 "January 3, 1961","Idaho Falls, Idaho, USA",Explosion at National Reactor Testing Station's SL-1 Stationary Low-Power Reactor Number One,3.0,22,4.0
