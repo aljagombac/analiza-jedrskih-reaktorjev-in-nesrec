@@ -2,7 +2,6 @@ import requests
 import os
 from bs4 import BeautifulSoup
 import re
-import csv
 import pandas as pd
 from io import StringIO
 
@@ -84,6 +83,7 @@ def poisci_drzave(vsebina_strani, soup):
     return sez_drzav
 
 def preimenovanje_stolpcev(tabela, sez_novih_imen):
+    """Preimenuje stolpce tabele."""
     df = pd.read_html(StringIO(str(tabela)))        
     df = pd.concat(df)
     sez_imen_stolpcev = df.columns.tolist() 
@@ -98,6 +98,7 @@ def preimenovanje_stolpcev(tabela, sez_novih_imen):
     return df
 
 def dodaj_stolpec(df, drzava):
+    """doda en stolpec tabeli."""
     stevilo_vrstic = len(df)
     stolpec = (stevilo_vrstic)*[drzava]
 
@@ -107,42 +108,31 @@ def dodaj_stolpec(df, drzava):
         df.insert(1, column="Lokacija", value=stolpec)
         return df
 
+def pocisti_podatke(df):
+    vzorec = ".*?\\[\d+\\]"
+    pociscen_df = df.replace(vzorec, '', regex=True)
+    return pociscen_df
+
 def uredi_tabele(tabele, drzave, sez_imen):
-    """Podatke o jedrskih reaktorjih iz tabel zapiše v csv datoteko in vsaki tabeli doda ime države, kateri pripadajo reaktorji."""
+    """Vsaki tabeli preimenuje stolpce in doda en nov stolpec ter vrne seznam Dataframe-ov tabel."""
     tabela_drzava = zip(tabele, drzave) 
 
     sez_df = []   
     for i, (tabela, drzava) in enumerate(tabela_drzava):
         df = preimenovanje_stolpcev(tabela, sez_imen)
         df = dodaj_stolpec(df, drzava)
+        df = pocisti_podatke(df)
         sez_df.append(df)
     return sez_df
 
 def zdruzi_in_zapisi_v_csv(sez_df, dat_csv, mapa):
+    """Združi tabele v en Dataframe in iz njega naredi csv.S"""
     pot = os.path.join(mapa,dat_csv)
     df_vse_tabele = pd.concat(sez_df)
     if 'Unnamed: 9' in df_vse_tabele.columns.tolist():
         df_vse_tabele.drop('Unnamed: 9', axis=1, inplace=True)
 
     df_vse_tabele.to_csv(pot, mode="w", index=False)
-
-#def podatki_v_csv(vsebina_strani, dat_csv, mapa):
-#    """Poišče tabele s podatki o reaktorjih in jih napiše v csv datoteko."""
-#    soup = BeautifulSoup(vsebina_strani, "html.parser")
-#    pot = os.path.join(mapa,dat_csv)
-#    sez_tabel = soup.select("table.wikitable.sortable")
-#    nepotrebni_headers = ["Contents", "Overview", "Nuclear safety"]
-#    sez_drzav = [header.get_text() for header in soup.select("h2") if not header.get_text() in nepotrebni_headers]
-#    
-#    tabela_drzava = zip(sez_tabel, sez_drzav)    
-#    for i, (tabela, drzava) in enumerate(tabela_drzava):
-#        df = pd.read_html(StringIO(str(tabela)))        
-#        df = pd.concat(df)
-#        df.rename(columns=({"Plant name": "Plant name" + " - " + drzava, "Location" : "Location" + " - " + drzava}), inplace=True)   
-#        if i == 0:     
-#            df.to_csv(pot, mode="w", index=False)
-#        else:
-#            df.to_csv(pot, mode="a", index=False)
 
 def main():
     
@@ -173,8 +163,8 @@ def main():
 
     print("Konec!")
 
-#if __name__ == "__main__":
-#    main()
+if __name__ == "__main__":
+    main()
 
 
 
