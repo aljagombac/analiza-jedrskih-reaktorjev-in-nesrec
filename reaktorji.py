@@ -109,7 +109,7 @@ def dodaj_stolpec(df, drzava):
         return df
 
 def pocisti_podatke(df):
-    vzorec = ".*?\\[\d+\\]"
+    vzorec = "(\\[\\d+\\])?"
     pociscen_df = df.replace(vzorec, '', regex=True)
     return pociscen_df
 
@@ -163,8 +163,8 @@ def main():
 
     print("Konec!")
 
-if __name__ == "__main__":
-    main()
+#if __name__ == "__main__":
+#    main()
 
 
 
