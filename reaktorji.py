@@ -175,8 +175,8 @@ def main():
 
     print("Konec!")
 
-if __name__ == "__main__":
-    main()
+#if __name__ == "__main__":
+#    main()
 
 
 
