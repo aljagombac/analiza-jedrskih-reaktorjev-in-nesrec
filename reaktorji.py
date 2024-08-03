@@ -2,6 +2,7 @@ import requests
 import os
 from bs4 import BeautifulSoup
 import re
+import numpy as np
 import pandas as pd
 from io import StringIO
 
@@ -68,12 +69,12 @@ def preberi_dat_v_niz(mapa, datoteka):
         vsebina = dat.read()
     return vsebina
 
-def poisci_tabele(vsebina_strani, soup):
+def poisci_tabele(soup):
     """Iz spletne strani izlušči tabele s podatki o jedrskih reaktorjih za posamezno državo."""    
     sez_tabel = soup.select("table.wikitable.sortable")
     return sez_tabel
 
-def poisci_drzave(vsebina_strani, soup):
+def poisci_drzave(soup):
     """Iz spletne strani izlušči imena državz z jedrskimi reaktorji."""
     nepotrebni_headers = ["Contents", "Overview", "Nuclear safety"]
     sez_drzav = []
@@ -103,6 +104,7 @@ def dodaj_stolpec(df, drzava):
     stolpec = (stevilo_vrstic)*[drzava]
 
     if "Lokacija" in df.columns.tolist():
+        df.insert(2, column="Država", value=stolpec)
         return df
     else:
         df.insert(1, column="Lokacija", value=stolpec)
@@ -110,7 +112,17 @@ def dodaj_stolpec(df, drzava):
 
 def pocisti_podatke(df):
     vzorec = "(\\[\\d+\\])?"
+    vzorec2 = "(?:.*?(\\d+))+.*"
+    vzorec3 = "^(\\d+),?(\\d+)?(?:\\s*-\\s*\\d+(?:,\\d+)?)?$"
+    stolpci = ["Stroški", "INES ocena"]
+
     pociscen_df = df.replace(vzorec, '', regex=True)
+    pociscen_df= pociscen_df.replace({"Smrti": vzorec2}, {"Smrti": "\\1"}, regex=True)
+    pociscen_df = pociscen_df.replace({"Strošek": vzorec3}, {"Strošek": "\\1\\2"}, regex=True)
+
+    if "Stroški" in pociscen_df.columns.tolist():
+        pociscen_df[stolpci] = pociscen_df[stolpci].apply(pd.to_numeric,errors='coerce')
+         
     return pociscen_df
 
 def uredi_tabele(tabele, drzave, sez_imen):
@@ -143,12 +155,12 @@ def main():
     soup1 = BeautifulSoup(vsebina1, "html.parser")
     soup2 = BeautifulSoup(vsebina2, "html.parser")
 
-    tabele1 = poisci_tabele(vsebina1, soup1)
-    tabele2 = poisci_tabele(vsebina2, soup2)
+    tabele1 = poisci_tabele(soup1)
+    tabele2 = poisci_tabele(soup2)
     print("Uspešno poiskal tabele.")
 
-    drzave1 = poisci_drzave(vsebina1, soup1)
-    drzave2 = poisci_drzave(vsebina2, soup2)
+    drzave1 = poisci_drzave(soup1)
+    drzave2 = poisci_drzave(soup2)
     print("Uspešno poiskal imena držav.")
 
     sez_imen1 = ["Ime elektrarne", "Številka reaktorja", "Tip", "Model", "Status", "Moč (MW)", "Začetek gradnje", "Začetek delovanja", "Datum zaprtja"]
@@ -163,8 +175,9 @@ def main():
 
     print("Konec!")
 
-#if __name__ == "__main__":
-#    main()
+if __name__ == "__main__":
+    main()
+
 
 
 
