@@ -114,15 +114,15 @@ def pocisti_podatke(df):
     vzorec = "(\\[\\d+\\])?"
     vzorec2 = "(?:.*?(\\d+))+.*"
     vzorec3 = "^(\\d+),?(\\d+)?(?:\\s*-\\s*\\d+(?:,\\d+)?)?$"
-    stolpci = ["Stroški", "INES ocena"]
+    stolpci = ["Strošek", "INES ocena"]
 
     pociscen_df = df.replace(vzorec, '', regex=True)
     pociscen_df= pociscen_df.replace({"Smrti": vzorec2}, {"Smrti": "\\1"}, regex=True)
     pociscen_df = pociscen_df.replace({"Strošek": vzorec3}, {"Strošek": "\\1\\2"}, regex=True)
 
-    if "Stroški" in pociscen_df.columns.tolist():
-        pociscen_df[stolpci] = pociscen_df[stolpci].apply(pd.to_numeric,errors='coerce')
-         
+    if "Strošek" in pociscen_df.columns.tolist():
+        pociscen_df[stolpci] = pociscen_df[stolpci].apply(pd.to_numeric, errors='coerce')
+
     return pociscen_df
 
 def uredi_tabele(tabele, drzave, sez_imen):
@@ -133,7 +133,6 @@ def uredi_tabele(tabele, drzave, sez_imen):
     for i, (tabela, drzava) in enumerate(tabela_drzava):
         df = preimenovanje_stolpcev(tabela, sez_imen)
         df = dodaj_stolpec(df, drzava)
-        df = pocisti_podatke(df)
         sez_df.append(df)
     return sez_df
 
@@ -141,6 +140,7 @@ def zdruzi_in_zapisi_v_csv(sez_df, dat_csv, mapa):
     """Združi tabele v en Dataframe in iz njega naredi csv.S"""
     pot = os.path.join(mapa,dat_csv)
     df_vse_tabele = pd.concat(sez_df)
+    df_vse_tabele = pocisti_podatke(df_vse_tabele)
     if 'Unnamed: 9' in df_vse_tabele.columns.tolist():
         df_vse_tabele.drop('Unnamed: 9', axis=1, inplace=True)
 
