@@ -1,4 +1,4 @@
-Datum,Lokacija,Država,Opis,Smrti,Strošek,INES ocena
+Datum,Lokacija,Država,Opis,Smrti,Škoda (mio $),INES ocena
 2002,"Tihange, Belgium",Belgium,"""Safety injection during hot shutdown at Tihange 2 unit"".",0,,2.0
 2005,"Tihange, Belgium",Belgium,"""Inadequate protection relays and related setpoints"".",0,,2.0
 2006,"Fleurus, Belgium",Belgium,"""Severe health effects for a worker at a commercial irradiation facility as a result of high doses of radiation"" at Sterigenics.",0,,4.0

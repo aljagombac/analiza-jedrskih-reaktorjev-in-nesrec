@@ -114,13 +114,13 @@ def pocisti_podatke(df):
     vzorec = "(\\[\\d+\\])?"
     vzorec2 = "(?:.*?(\\d+))+.*"
     vzorec3 = "^(\\d+),?(\\d+)?(?:\\s*-\\s*\\d+(?:,\\d+)?)?$"
-    stolpci = ["Strošek", "INES ocena"]
+    stolpci = ["Škoda (mio $)", "INES ocena"]
 
     pociscen_df = df.replace(vzorec, '', regex=True)
     pociscen_df= pociscen_df.replace({"Smrti": vzorec2}, {"Smrti": "\\1"}, regex=True)
-    pociscen_df = pociscen_df.replace({"Strošek": vzorec3}, {"Strošek": "\\1\\2"}, regex=True)
+    pociscen_df = pociscen_df.replace({"Škoda (mio $)": vzorec3}, {"Škoda (mio $)": "\\1\\2"}, regex=True)
 
-    if "Strošek" in pociscen_df.columns.tolist():
+    if "Škoda (mio $)" in pociscen_df.columns.tolist():
         pociscen_df[stolpci] = pociscen_df[stolpci].apply(pd.to_numeric, errors='coerce')
 
     return pociscen_df
@@ -164,7 +164,7 @@ def main():
     print("Uspešno poiskal imena držav.")
 
     sez_imen1 = ["Ime elektrarne", "Številka reaktorja", "Tip", "Model", "Status", "Moč (MW)", "Začetek gradnje", "Začetek delovanja", "Datum zaprtja"]
-    sez_imen2 = ["Datum", "Lokacija", "Opis", "Smrti", "Strošek", "INES ocena"]
+    sez_imen2 = ["Datum", "Lokacija", "Opis", "Smrti", "Škoda (mio $)", "INES ocena"]
 
     sez_df1 = uredi_tabele(tabele1, drzave1, sez_imen1)
     sez_df2 = uredi_tabele(tabele2, drzave2, sez_imen2)
@@ -175,8 +175,8 @@ def main():
 
     print("Konec!")
 
-#if __name__ == "__main__":
-#    main()
+if __name__ == "__main__":
+    main()
 
 
 
