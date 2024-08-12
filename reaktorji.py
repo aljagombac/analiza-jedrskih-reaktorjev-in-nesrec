@@ -107,7 +107,7 @@ def dodaj_stolpec(df, drzava):
         df.insert(2, column="Država", value=stolpec)
         return df
     else:
-        df.insert(1, column="Lokacija", value=stolpec)
+        df.insert(1, column="Država", value=stolpec)
         return df
 
 def pocisti_podatke(df):

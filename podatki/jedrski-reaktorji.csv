@@ -1,4 +1,4 @@
-Ime elektrarne,Lokacija,Številka reaktorja,Tip,Model,Status,Moč (MW),Začetek gradnje,Začetek delovanja,Datum zaprtja
+Ime elektrarne,Država,Številka reaktorja,Tip,Model,Status,Moč (MW),Začetek gradnje,Začetek delovanja,Datum zaprtja
 Atucha,Argentina,1,PHWR,Siemens-KWU,Operational,335,1 Jun 1968,24 Jun 1974,
 Atucha,Argentina,2,PHWR,Siemens-KWU,Operational,692,14 Jul 1981,27 Jun 2014,
 Atucha,Argentina,3,PWR,Hualong One,Planned,1200,,,
