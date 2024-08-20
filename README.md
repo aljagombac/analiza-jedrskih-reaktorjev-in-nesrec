@@ -36,16 +36,16 @@ pip install requests
 ```console
 pip install beautifulsoup4
 ```
-Da lahko poganjamo Jupyter Notebook naložimo tudi 
-```console
-pip install jupyter
-```
 Za urejanje in prikaz podatkov pa uporabimo knjižnice:
 ```console
-pip install pandas
+pip install pandas lxml
 ```
 ```console
 pip install geopandas matplotlib
+```
+Da lahko poganjamo Jupyter Notebook naložimo tudi 
+```console
+pip install jupyter
 ```
 
 #### Zagon
