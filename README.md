@@ -14,7 +14,17 @@ Analiza podatkov je zapisana v `analiza/reaktorji_nesrece.ipynb` v formatu Jupyt
 
 ## Navodila za uporabo
 
-Najprej si namestite repozitorij v izbrano mapo in v njej naložite naslednje knjižnice:
+Najprej si namestimo repozitorij v izbrano mapo, pripravimo virtualno okolje, če je potrebno in naložimo knjižnice.
+
+#### Priprava virtualnega okolja (za Linux uporabnike)
+V izbrani mapi izvedemo ukaz 
+```console
+python -m venv venv
+```
+in aktiviramo okolje, kjer nalagamo naslednje knjižnice.
+```console
+source venv/bin/activate
+```
 
 #### Knjižnice
 
