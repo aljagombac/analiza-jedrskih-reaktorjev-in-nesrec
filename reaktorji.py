@@ -39,7 +39,7 @@ def shrani_niz_v_datoteko(text, mapa, datoteka):
     return None
 
 def shrani_html(url, mapa, datoteka):
-    """Shrani niz url-ja v html datoteko."""
+    """Shrani vsebino strani v html datoteko."""
     text = shrani_url_v_niz(url)
     shrani_niz_v_datoteko(text, mapa, datoteka)
 
@@ -51,12 +51,12 @@ def preberi_dat_v_niz(mapa, datoteka):
     return vsebina
 
 def poisci_tabele(soup):
-    """Iz spletne strani izlušči tabele s podatki o jedrskih reaktorjih za posamezno državo."""    
+    """Iz spletne strani izlušči tabele s podatki in vrne seznam tabel."""    
     sez_tabel = soup.select("table.wikitable.sortable")
     return sez_tabel
 
 def poisci_drzave(soup):
-    """Iz spletne strani izlušči imena državz z jedrskimi reaktorji."""
+    """Iz spletne strani poišče imena držav in vrne seznam držav."""
     nepotrebni_headers = ["Contents", "Overview", "Nuclear safety"]
     sez_drzav = []
     for header in soup.select("h2"):
@@ -84,7 +84,7 @@ def preimenovanje_stolpcev(tabela, sez_novih_imen):
     return df
 
 def dodaj_stolpec(df, drzava):
-    """doda en stolpec tabeli."""
+    """Doda en stolpec tabeli."""
     stevilo_vrstic = len(df)
     stolpec = (stevilo_vrstic)*[drzava]
 
@@ -96,6 +96,7 @@ def dodaj_stolpec(df, drzava):
         return df
 
 def pocisti_podatke(df):
+    """Odstrani oglate oklepaje, poišče podatek o številu smrti in količini škode iz opisa ter doda NaN praznim celicam. """
     vzorec = "(\\[\\d+\\])?"
     vzorec2 = "(?:.*?(\\d+))+.*"
     vzorec3 = "^(\\d+),?(\\d+)?(?:\\s*-\\s*\\d+(?:,\\d+)?)?$"
@@ -111,7 +112,7 @@ def pocisti_podatke(df):
     return pociscen_df
 
 def uredi_tabele(tabele, drzave, sez_imen):
-    """Vsaki tabeli preimenuje stolpce in doda en nov stolpec ter vrne seznam Dataframe-ov tabel."""
+    """Vsaki tabeli preimenuje stolpce, ji doda en nov stolpec, jo predela v DataFrame in vrne seznam."""
     tabela_drzava = zip(tabele, drzave) 
 
     sez_df = []   
@@ -122,7 +123,7 @@ def uredi_tabele(tabele, drzave, sez_imen):
     return sez_df
 
 def zdruzi_in_zapisi_v_csv(sez_df, dat_csv, mapa):
-    """Združi tabele v en Dataframe in iz njega naredi csv.S"""
+    """Združi tabele v en DataFrame in iz njega naredi csv.S"""
     pot = os.path.join(mapa,dat_csv)
     df_vse_tabele = pd.concat(sez_df)
     df_vse_tabele = pocisti_podatke(df_vse_tabele)
@@ -164,7 +165,7 @@ def main():
     zdruzi_in_zapisi_v_csv(sez_df1, reaktorji_csv, reaktorji_mapa)
     zdruzi_in_zapisi_v_csv(sez_df2, nesrece_csv, reaktorji_mapa)
 
-    print("Konec!")
+    print("Konec! :)")
 
 if __name__ == "__main__":
     main()

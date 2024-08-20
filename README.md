@@ -6,11 +6,11 @@ V tej projektni nalogi analiziramo podatke o jedrskih reaktorjih in nesrečah iz
 
 #### Zajemanje podatkov
 
-Programi za pridobivanje podatkov so napisani v datoteki `reaktorji.py` v programerskem jeziku Python. Ob zagonu naloži html kodo spletne strani `podatki/jedrski-reaktorji.html` in `podatki/jedrske-nesrece.html`, prebere podatke v tabelah in jih preoblikuje v ustrezno obliko ter zapiše v csv datoteki `podatki/jedrski-reaktorji.csv` in `podatki/jedrske-nesrece.csv`, potem pa se program zaključi. Natančnejša navodila so razložena v [Navodilih za uporabo](https://github.com/aljagombac/jedrski-reaktorji-projektna-uvp/tree/main?tab=readme-ov-file#navodila-za-uporabo).
+Koda za pridobivanje podatkov je napisana v datoteki `reaktorji.py` v programerskem jeziku Python. Ob zagonu naloži html kodo spletne strani `podatki/jedrski-reaktorji.html` in `podatki/jedrske-nesrece.html`, prebere podatke v tabelah in jih preoblikuje v ustrezno obliko ter zapiše v csv datoteki `podatki/jedrski-reaktorji.csv` in `podatki/jedrske-nesrece.csv`. Natančnejša navodila so razložena še v [Navodilih za uporabo](https://github.com/aljagombac/jedrski-reaktorji-projektna-uvp/tree/main?tab=readme-ov-file#navodila-za-uporabo).
 
 #### Analiziranje podatkov
 
-Analiza podatkov je zapisana v `analiza/reaktorji_nesrece.ipynb` v formatu Jupyter Notebook, v isti mapi pa se nahajajo še uporabljene zunanje datoteke. Rezultati so postopoma predstavljeni z grafi, tabelami in zemljevidi, ki si jih lahko ogledate direktno v [`analiza/reaktorji_nesrece.ipynb`](https://github.com/aljagombac/jedrski-reaktorji-projektna-uvp/blob/5dedc32c918fda6e83af7a0f87947f397854f755/analiza/reaktoji_nesrece.ipynb)
+Analiza podatkov je zapisana v `analiza/reaktorji_nesrece.ipynb` v formatu Jupyter Notebook, v isti mapi pa se nahajajo še uporabljene zunanje datoteke. Rezultati so postopoma predstavljeni z grafi, tabelami in zemljevidi, ki si jih lahko ogledamo direktno v [`analiza/reaktorji_nesrece.ipynb`](https://github.com/aljagombac/jedrski-reaktorji-projektna-uvp/blob/5dedc32c918fda6e83af7a0f87947f397854f755/analiza/reaktoji_nesrece.ipynb)
 
 ## Navodila za uporabo
 
@@ -28,7 +28,7 @@ source venv/bin/activate
 
 #### Knjižnice
 
-Knjižnice naložimo z ukazom `pip` s `pip3`. 
+Knjižnice naložimo z ukazom `pip` ali `pip3`. 
 Najprej naložimo html s knjižnico in iz html-ja pridobimo iskane podatke 
 ```console
 pip install requests
