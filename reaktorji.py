@@ -79,8 +79,12 @@ def poisci_drzave(soup):
     nepotrebni_headers = ["Contents", "Overview", "Nuclear safety"]
     sez_drzav = []
     for header in soup.select("h2"):
-        if not header.get_text() in nepotrebni_headers:
-            sez_drzav.append(header.get_text())    
+        header_text = header.get_text()
+        if not header_text in nepotrebni_headers:
+            if header_text == "United States":
+                sez_drzav.append("United States of America")
+            else:
+                sez_drzav.append(header_text)    
     return sez_drzav
 
 def preimenovanje_stolpcev(tabela, sez_novih_imen):
@@ -177,9 +181,3 @@ def main():
 
 if __name__ == "__main__":
     main()
-
-
-
-
-
-
