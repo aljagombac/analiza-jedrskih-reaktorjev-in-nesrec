@@ -137,7 +137,7 @@ def main():
 
     shrani_html(url1, reaktorji_mapa, reaktorji_html)
     shrani_html(url2, reaktorji_mapa, nesrece_html)
-    print("Uspesno shranil html-ja.")
+    print("Uspešno shranil html-ja.")
     
     vsebina1 = preberi_dat_v_niz(reaktorji_mapa, reaktorji_html)
     vsebina2 = preberi_dat_v_niz(reaktorji_mapa, nesrece_html)
